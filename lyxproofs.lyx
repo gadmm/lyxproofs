@@ -1,0 +1,653 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 1
+\paragraph_separation indent
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\proofsep}{\mathbin{\vdash}}
+{\vdash}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FRONT-END TO BUSSPROOFS FOR LYX
+\end_layout
+
+\begin_layout Plain Layout
+GM 2009-2013.
+\end_layout
+
+\begin_layout Plain Layout
+Remember: to put math in labels, use 
+\backslash
+ensuremath.
+ (This is a workaround for a limitation of the LyX macro system.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\fCenter}{\proofsep}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prooflabelformat}[1]{{\scriptstyle \textrm{#1}}}
+{{\scriptstyle \textrm{#1}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryprimitive}[2]{\BinaryInf$#1\fCenter#2$}
+{#1\fCenter#2}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axiomprimitive}[2]{\Axiom$#1\fCenter#2$}
+{#1\fCenter#2}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryprimitive}[2]{\UnaryInf$#1\fCenter#2$}
+{#1\fCenter#2}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryprimitive}[2]{\TrinaryInf$#1\fCenter#2$}
+{#1\fCenter#2}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bussproof}[1]{#1\DisplayProof}
+{{\scriptscriptstyle \texttt{bp}}\left.#1\right.}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Inference steps used with 
+\backslash
+bussproof
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+with an option
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axiomc}[1]{\AxiomC{\ensuremath{#1}}}
+{{\scriptscriptstyle \texttt{axc}}\left.#1\right.}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axiom}[2]{\axiomprimitive{#1}{#2}}
+{{\scriptscriptstyle \texttt{ax}}\left.#1\proofsep#2\right.}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfcdecorated}[5]{#1#2#5\RightLabel{\ensuremath{\prooflabelformat{#4}}}\BinaryInfC{\ensuremath{#3}}}
+{{\scriptscriptstyle \texttt{style:}#5}\cfrac{#1 #2}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfcdecorated}[6]{#1#2#3#6\RightLabel{\ensuremath{\prooflabelformat{#5}}}\TrinaryInfC{\ensuremath{#4}}}
+{{\scriptscriptstyle \texttt{style:}#6}\cfrac{#1 #2 #3}{#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfcdecorated}[4]{#1#4\RightLabel{\ensuremath{\prooflabelformat{#3}}}\UnaryInfC{\ensuremath{#2}}}
+{{\scriptscriptstyle \texttt{style:}#4}\cfrac{#1}{#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfdecorated}[6]{#1#2#6\RightLabel{\ensuremath{\prooflabelformat{#5}}}\binaryprimitive{#3}{#4}}
+{{\scriptscriptstyle \texttt{style:}#6}\cfrac{#1 #2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfdecorated}[7]{#1#2#3#7\RightLabel{\ensuremath{\prooflabelformat{#6}}}\trinaryprimitive{#4}{#5}}
+{{\scriptscriptstyle \texttt{style:}#7}\cfrac{#1 #2 #3}{#4\proofsep#5}\prooflabelformat{#6}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfdecorated}[5]{#1#5\RightLabel{\ensuremath{\prooflabelformat{#4}}}\unaryprimitive{#2}{#3}}
+{{\scriptscriptstyle \texttt{style:}#5}\cfrac{#1}{#2\proofsep#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfc}[4]{\binaryinfcdecorated{#1}{#2}{#3}{#4}{}}
+{\cfrac{#1 #2}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfc}[5]{\trinaryinfcdecorated{#1}{#2}{#3}{#4}{#5}{}}
+{\cfrac{#1 #2 #3}{#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfc}[3]{\unaryinfcdecorated{#1}{#2}{#3}{}}
+{\cfrac{#1}{#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinf}[5]{\binaryinfdecorated{#1}{#2}{#3}{#4}{#5}{}}
+{\cfrac{#1 #2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinf}[6]{\trinaryinfdecorated{#1}{#2}{#3}{#4}{#5}{#6}{}}
+{\cfrac{#1 #2 #3}{#4\proofsep#5}\prooflabelformat{#6}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinf}[4]{\unaryinfdecorated{#1}{#2}{#3}{#4}{}}
+{\cfrac{#1}{#2\proofsep#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfcdouble}[4]{\binaryinfcdecorated{#1}{#2}{#3}{#4}{\doubleLine}}
+{\cfrac{\underline{#1 #2}}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfcdouble}[5]{\trinaryinfcdecorated{#1}{#2}{#3}{#4}{#5}{\doubleLine}}
+{\cfrac{\underline{#1 #2 #3}}{#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfcdouble}[3]{\unaryinfcdecorated{#1}{#2}{#3}{\doubleLine}}
+{\cfrac{#1}{\overline{#2}}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfdouble}[5]{\binaryinfdecorated{#1}{#2}{#3}{#4}{#5}{\doubleLine}}
+{\cfrac{\underline{#1 #2}}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfdouble}[6]{\trinaryinfdecorated{#1}{#2}{#3}{#4}{#5}{#6}{\doubleLine}}
+{\cfrac{\underline{#1 #2 #3}}{#4\proofsep#5}\prooflabelformat{#6}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfdouble}[4]{\unaryinfdecorated{#1}{#2}{#3}{#4}{\doubleLine}}
+{\cfrac{#1}{\overline{#2\proofsep#3}}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfcdotted}[4]{\binaryinfcdecorated{#1}{#2}{#3}{#4}{\dottedLine}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1 #2}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfcdotted}[5]{\trinaryinfcdecorated{#1}{#2}{#3}{#4}{#5}{\dottedLine}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1 #2 #3}{#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfcdotted}[3]{\unaryinfcdecorated{#1}{#2}{#3}{\dottedLine}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1}{#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryinfdotted}[5]{\binaryinfdecorated{#1}{#2}{#3}{#4}{#5}{\dottedLine}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1 #2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trinaryinfdotted}[6]{\trinaryinfdecorated{#1}{#2}{#3}{#4}{#5}{#6}{\dottedLine}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1 #2 #3}{#4\proofsep#5}\prooflabelformat{#6}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryinfdotted}[4]{\unaryinfdecorated{#1}{#2}{#3}{#4}{\dottedLine}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1}{#2\proofsep#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Inference rules that stand alone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrulesp}[4]{\bussproof{\unaryinf{\axiomc{\vphantom{#4}}}{#1}{#2}{#3}}}
+{\cfrac{\vphantom{#4}}{#1\proofsep#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrulespdouble}[4]{\bussproof{\unaryinfdouble{\axiomc{\vphantom{#4}}}{#1}{#2}{#3}}}
+{\cfrac{\vphantom{#4}}{\overline{#1\proofsep#2}}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrulespdotted}[4]{\bussproof{\unaryinfdotted{\axiomc{\vphantom{#4}}}{#1}{#2}{#3}}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{\vphantom{#4}}{#1\proofsep#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrule}[3]{\axrulesp{#1}{#2}{#3}.}
+{\overline{#1\proofsep#2}^{\prooflabelformat{#3}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axruledouble}[3]{\axrulespdouble{#1}{#2}{#3}.}
+{\overline{\overline{#1\proofsep#2}}^{\prooflabelformat{#3}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axruledotted}[3]{\axrulespdotted{#1}{#2}{#3}.}
+{^{{\scriptscriptstyle \texttt{dotted}}}\overline{#1\proofsep#2}^{\prooflabelformat{#3}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrule}[5]{\bussproof{\unaryinf{\axiom{#1}{#2}}{#3}{#4}{#5}}}
+{\cfrac{#1\proofsep#2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unruledouble}[5]{\bussproof{\unaryinfdouble{\axiom{#1}{#2}}{#3}{#4}{#5}}}
+{\cfrac{#1\proofsep#2}{\overline{#3\proofsep#4}}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unruledotted}[5]{\bussproof{\unaryinfdotted{\axiom{#1}{#2}}{#3}{#4}{#5}}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1\proofsep#2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrulec}[3]{\bussproof{\unaryinfc{\axiomc{#1}}{#2}{#3}}}
+{\cfrac{#1}{#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrulecdouble}[3]{\bussproof{\unaryinfcdouble{\axiomc{#1}}{#2}{#3}}}
+{\cfrac{#1}{\overline{#2}}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrulecdotted}[3]{\bussproof{\unaryinfcdotted{\axiomc{#1}}{#2}{#3}}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1}{#2}\prooflabelformat{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrulecsep}[5]{\bussproof{\unaryinfc{\axiomc{#1\proofsep#2}}{#3\proofsep#4}{#5}}}
+{\cfrac{#1\proofsep#2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrulecsepdouble}[5]{\bussproof{\unaryinfcdouble{\axiomc{#1\proofsep#2}}{#3\proofsep#4}{#5}}}
+{\cfrac{#1\proofsep#2}{\overline{#3\proofsep#4}}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unrulecsepdotted}[5]{\bussproof{\unaryinfcdotted{\axiomc{#1\proofsep#2}}{#3\proofsep#4}{#5}}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1\proofsep#2}{#3\proofsep#4}\prooflabelformat{#5}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binrule}[7]{\bussproof{\binaryinf{\axiom{#1}{#2}}{\axiom{#3}{#4}}{#5}{#6}{#7}}}
+{\cfrac{#1\proofsep#2  #3\proofsep#4}{#5\proofsep#6}\prooflabelformat{#7}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binruledouble}[7]{\bussproof{\binaryinfdouble{\axiom{#1}{#2}}{\axiom{#3}{#4}}{#5}{#6}{#7}}}
+{\cfrac{\underline{#1\proofsep#2  #3\proofsep#4}}{#5\proofsep#6}\prooflabelformat{#7}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binruledotted}[7]{\bussproof{\binaryinfdotted{\axiom{#1}{#2}}{\axiom{#3}{#4}}{#5}{#6}{#7}}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1\proofsep#2  #3\proofsep#4}{#5\proofsep#6}\prooflabelformat{#7}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binrulec}[4]{\bussproof{\binaryinfc{\axiomc{#1}}{\axiomc{#2}}{#3}{#4}}}
+{\cfrac{#1  #2}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binrulecdouble}[4]{\bussproof{\binaryinfcdouble{\axiomc{#1}}{\axiomc{#2}}{#3}{#4}}}
+{\cfrac{\underline{#1  #2}}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binrulecdotted}[4]{\bussproof{\binaryinfcdotted{\axiomc{#1}}{\axiomc{#2}}{#3}{#4}}}
+{{\scriptscriptstyle \texttt{dotted}}\cfrac{#1  #2}{#3}\prooflabelformat{#4}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrulec}[2]{\unrulec{}{#1}{#2}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrulecdouble}[2]{\unrulecdouble{}{#1}{#2}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\axrulecdotted}[2]{\unrulecdotted{}{#1}{#2}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
