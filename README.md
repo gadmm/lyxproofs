@@ -4,13 +4,11 @@
 
 ![Screenshot. Above: LyX, below: PDF](lyxproofs.png)
 
-##Use
+## Use
 
-- Include `lyxproofs.lyx` as a sub-document.
-- Refer to the guide `lyxproofs-guide.lyx`
-- Requires LyX ≥ 1.6.
+See `lyxproofs-guide.lyx`.
 
-##License
+## License
 
-GNU GPL v2. See `LICENSE`.
+GNU Affero GPL v3.0. See `LICENSE`.
 
